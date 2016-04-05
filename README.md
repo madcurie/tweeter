@@ -16,7 +16,7 @@
 * Fork the repo
 * Clone your fork locally
 ```
-git clone https://github.com/madcurie/tweeter.git
+git clone https://github.com/[your github name]/tweeter.git
 ```
 * Ensure Node is installed. If not, visit [NodeJS](https://nodejs.org/en).
 * Ensure MongoDB is installed. If not, install MongoDB globally
