@@ -1,9 +1,3 @@
-//database sprint
-//shortly express sprint
-//testify
-
-//test to make sure stuff gets added
-
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
