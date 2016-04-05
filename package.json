@@ -1,0 +1,25 @@
+{
+  "name": "tweeter",
+  "version": "1.0.0",
+  "description": "backend server of chat room",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "chai": "^3.5.0",
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "mongodb": "^2.1.14",
+    "mongoose": "^4.4.10",
+    "path": "^0.12.7",
+    "request": "^2.69.0",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node ./server/server.js & mocha server/spec/server-spec.js; RES=$?; kill %1; exit $RES"
+  },
+  "author": "daisy tsao",
+  "license": "ISC"
+}
