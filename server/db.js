@@ -1,11 +1,8 @@
 
 var mongoose = require('mongoose');
-
 var db = {};
 
-//******** SET UP DATABASE
-
-
+//set up event schema for db
 
 db.Schema = mongoose.Schema;
 db.eventSchema = new db.Schema ({
@@ -17,10 +14,5 @@ db.eventSchema = new db.Schema ({
 });
 
 db.Event = mongoose.model('Event', db.eventSchema);
-
-db.roomSchema = new db.Schema({
-  events: []
-});
-db.Room = mongoose.model('Room', db.roomSchema);
 
 module.exports = db;
