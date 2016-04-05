@@ -6,6 +6,13 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madcurie/tweeter.git"
+  },
+  "author": "Daisy Tsao[daisy.tsao@gmail.com]",
+  "license": "ISC",
+  "homepage": "https://github.com/madcurie/tweeter#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
     "chai": "^3.5.0",
@@ -19,7 +26,6 @@
   "devDependencies": {},
   "scripts": {
     "test": "node ./server/server.js & mocha server/spec/server-spec.js; RES=$?; kill %1; exit $RES"
-  },
-  "author": "daisy tsao",
-  "license": "ISC"
+  }
+  
 }
