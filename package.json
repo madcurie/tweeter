@@ -26,6 +26,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "node ./server/server.js & mocha server/spec/server-spec.js; RES=$?; kill %1; exit $RES"
+    "start": "node ./server/server.js"
   }
 }

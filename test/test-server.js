@@ -5,8 +5,8 @@ var chai = require('chai');
 var chaiHttp = require('chai-http');
 var mongoose = require("mongoose");
 
-var server = require('../server.js');
-var Event = require("../db.js").Event;
+var server = require('../server/server.js');
+var Event = require("../server/db.js").Event;
 
 var should = chai.should();
 chai.use(chaiHttp);
@@ -44,7 +44,7 @@ describe("Tweeter server", function() {
 
   it('should list all events in date range on /events GET', function(done) {
     chai.request(server)
-      .get('/events​?from=1985­10­26T09:00:00Z&to=1985­10­27T09:00:00Z​')
+      .get('/events?from=1985­10­26T09:00:00Z&to=1985­10­27T09:00:00Z​')
       .end(function(err, res){
         res.should.have.status(200);
         res.body.should.be.a('object');
@@ -56,13 +56,6 @@ describe("Tweeter server", function() {
         res.body.events[0].date.should.equal('1985­10­26T09:00:00Z');
         res.body.events[0].user.should.equal('Doc');
         res.body.events[0].type.should.equal('enter');
-        res.body.events[1].should.have.property('date');
-        res.body.events[1].should.have.property('user');
-        res.body.events[1].should.have.property('type');
-        res.body.events[1].date.should.equal('1985­10­26T09:02:00Z');
-        res.body.events[1].user.should.equal('Marty');
-        res.body.events[1].type.should.equal('highfive');
-        res.body.events[1].otheruser.should.equal('Doc');
         done();
       });
   });

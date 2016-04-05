@@ -43,7 +43,7 @@ npm install -g mocha
 ```
 * Run mocha 
 ```
-mocha server/spec/server-spec.js
+mocha test/test-server.js
 ```
 
 
