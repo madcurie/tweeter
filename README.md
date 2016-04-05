@@ -41,7 +41,7 @@ node server/server.js
 ```
 npm install -g mocha
 ```
-* Start mocha 
+* Run mocha 
 ```
 mocha server/spec/server-spec.js
 ```
