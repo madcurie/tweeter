@@ -1,11 +1,10 @@
 
 var mongoose = require('mongoose');
-var db = {};
 
 //set up event schema for db
 
-db.Schema = mongoose.Schema;
-db.eventSchema = new db.Schema ({
+var Schema = mongoose.Schema;
+var eventSchema = new Schema ({
   date: { type: String, required: true },
   user: { type: String, required: true },
   type: { type: String, required: true },
@@ -13,6 +12,6 @@ db.eventSchema = new db.Schema ({
   otheruser: { type: String }
 });
 
-db.Event = mongoose.model('Event', db.eventSchema);
+module.exports = mongoose.model('Event', eventSchema);
 
-module.exports = db;
+

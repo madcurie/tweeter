@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var db = require('./db');
+var Event = require('./db');
 
 //api routes
 router.post('/', submitEvent);
@@ -16,7 +16,7 @@ function submitEvent (req, res) {
   var message = event.message || null;
   var otheruser = event.otheruser || null;
 
-  var event = db.Event({
+  var event = Event({
     date: event.date,
     user: event.user,
     type: event.type,
@@ -45,7 +45,7 @@ function submitEvent (req, res) {
 
 //CLEAR DATA 
 function clearEvents (req, res) {
-  db.Event.remove( 
+  Event.remove( 
     function(err, removed) {
       if (err) {
         console.log("error clearing events: ", err);
@@ -71,7 +71,7 @@ function getEventsInRange (req, res) {
   var startDate = req.query.from;
   var endDate = req.query.to;
 
-  db.Event.aggregate([
+  Event.aggregate([
     { $match: {date: {$lte: endDate, $gte: startDate } } },
     { $sort: { date: 1 } }
     ],
@@ -139,13 +139,11 @@ function getEventSummary (req, res) {
 
     var cleanDate = new Date(newDate);
     var finalDate = cleanDate.toISOString();
-    console.log('finalDATE: ', finalDate);
-    var cut = finalDate.substr(0, 19) + "Z";
-    console.log('cut dATE: ', cut);
-    return cut;
+    
+    return finalDate.substr(0, 19) + "Z";
   }
 
-  db.Event.aggregate([
+  Event.aggregate([
     { $match: {date: {$lte: endDate, $gte: startDate } } },
     { $sort: { date: 1 } }
     ],

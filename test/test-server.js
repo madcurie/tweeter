@@ -6,7 +6,7 @@ var chaiHttp = require('chai-http');
 var mongoose = require("mongoose");
 
 var server = require('../server/server.js');
-var Event = require("../server/db.js").Event;
+var Event = require("../server/db.js");
 
 var should = chai.should();
 chai.use(chaiHttp);
