@@ -138,7 +138,11 @@ function getEventSummary (req, res) {
     }
 
     var cleanDate = new Date(newDate);
-    return cleanDate.toISOString();
+    var finalDate = cleanDate.toISOString();
+    console.log('finalDATE: ', finalDate);
+    var cut = finalDate.substr(0, 19) + "Z";
+    console.log('cut dATE: ', cut);
+    return cut;
   }
 
   db.Event.aggregate([

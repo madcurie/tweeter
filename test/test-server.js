@@ -73,11 +73,11 @@ describe("Tweeter server", function() {
         res.body.events[0].should.have.property('leaves');
         res.body.events[0].should.have.property('comments');
         res.body.events[0].should.have.property('highfives');
-        res.body.events[0].date.should.equal('1985­10­26T09:00:00Z');
+        res.body.events[0].date.should.equal('1985-10-26T09:00:00Z');
         res.body.events[0].enters.should.equal(1);
         res.body.events[0].leaves.should.equal(0);
         res.body.events[0].comments.should.equal(0);
-        res.body.events[0].highfives.should.equal(1);
+        res.body.events[0].highfives.should.equal(0);
         done();
       });
   });
