@@ -61,9 +61,11 @@ db.eventSchema = new db.Schema ({
 ```
 
 ###File Structure
+```
 server
 ├── server.js
 ├── db.js
 ├── events.js
 └── spec
      └── server-spec.js
+```
