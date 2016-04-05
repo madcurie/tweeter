@@ -21,7 +21,7 @@
     "mongodb": "^2.1.14",
     "mongoose": "^4.4.10",
     "path": "^0.12.7",
-    "request": "^2.69.0",
+    "request": "^2.69.0"
   },
   "devDependencies": {},
   "scripts": {
